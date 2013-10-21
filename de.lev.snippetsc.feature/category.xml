@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.lev.snippetsc.feature_0.0.1.qualifier.jar" id="de.lev.snippetsc.feature" version="0.0.1.qualifier">
+      <category name="de.lev.snippetsc"/>
+   </feature>
+   <category-def name="de.lev.snippetsc" label="Snippet Shortcut"/>
+</site>

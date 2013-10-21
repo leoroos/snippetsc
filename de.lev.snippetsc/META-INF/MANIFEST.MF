@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Snippetshortcut
-Bundle-SymbolicName: snippetshortcut;singleton:=true
+Bundle-SymbolicName: de.lev.snippetsc;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Bundle-Activator: snippetshortcut.Activator
 Require-Bundle: org.eclipse.ui,

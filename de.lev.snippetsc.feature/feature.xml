@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.lev.snippetsc.feature"
+      label="Snippet Shortcut"
+      version="0.0.1.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jdt.core" version="3.9.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.8.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions" version="3.4.500" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.text"/>
+      <import plugin="org.eclipse.jface.text" version="3.8.101" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="snippetshortcut"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
