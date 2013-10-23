@@ -28,7 +28,7 @@
    </requires>
 
    <plugin
-         id="snippetshortcut"
+         id="de.lev.snippetsc"
          download-size="0"
          install-size="0"
          version="0.0.0"

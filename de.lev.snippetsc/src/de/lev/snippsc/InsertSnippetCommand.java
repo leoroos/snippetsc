@@ -15,6 +15,9 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 
+import de.lev.snippetsc.preferences.PreferenceConstants;
+import snippetshortcut.Activator;
+
 public class InsertSnippetCommand extends AbstractHandler {
 
 	@Override
@@ -32,7 +35,7 @@ public class InsertSnippetCommand extends AbstractHandler {
 				ITextSelection textsel = (ITextSelection) selection;
 				int offset = textsel.getOffset();				
 				try {
-					String insertString = "->";
+					String insertString = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.P_STRING);
 					document.replace(offset, 0, insertString);
 					selp.setSelection(new TextSelection(offset + insertString.length(), 0));
 				} catch (BadLocationException e) {

@@ -17,10 +17,6 @@
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            commandId="snippetshortcut.commands.sampleCommand"
-            class="snippetshortcut.handlers.SampleHandler">
-      </handler>
-      <handler
             class="de.lev.snippsc.InsertSnippetCommand"
             commandId="snippetshortcut.handler.insertSnippetCommand">
       </handler>
@@ -43,13 +39,26 @@
                mnemonic="M"
                id="snippetshortcut.menus.sampleMenu">
             <command
-                  commandId="snippetshortcut.commands.sampleCommand"
-                  id="snippetshortcut.handler.insertSnippetCommand"
+                  commandId="snippetshortcut.handler.insertSnippetCommand"
                   label="Insert Snippet"
                   mnemonic="S">
             </command>
          </menu>
       </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="de.lev.snippetsc.preferences.SnippetSCPreferencePage"
+            id="de.lev.snippetsc.preferences.SnippetSCPreferencePage"
+            name="SnippetSC Preferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="de.lev.snippetsc.preferences.PreferenceInitializer">
+      </initializer>
    </extension>
 
 </plugin>
