@@ -3,7 +3,7 @@ package de.lev.snippetsc.preferences;
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
 
-import snippetshortcut.Activator;
+import de.lev.snippetsc.Activator;
 
 /**
  * Class used to initialize default preference values.

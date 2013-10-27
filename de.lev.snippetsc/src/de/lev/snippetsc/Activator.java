@@ -1,4 +1,4 @@
-package snippetshortcut;
+package de.lev.snippetsc;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;

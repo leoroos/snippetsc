@@ -15,8 +15,8 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 
+import de.lev.snippetsc.Activator;
 import de.lev.snippetsc.preferences.PreferenceConstants;
-import snippetshortcut.Activator;
 
 public class InsertSnippetCommand extends AbstractHandler {
 

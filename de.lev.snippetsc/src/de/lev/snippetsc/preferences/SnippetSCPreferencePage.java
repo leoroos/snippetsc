@@ -1,9 +1,15 @@
 package de.lev.snippetsc.preferences;
 
 import org.eclipse.jface.preference.*;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Layout;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.ui.IWorkbench;
-import snippetshortcut.Activator;
+
+import de.lev.snippetsc.Activator;
 
 /**
  * This class represents a preference page that
@@ -39,6 +45,28 @@ public class SnippetSCPreferencePage
 		addField(
 			new StringFieldEditor(PreferenceConstants.P_STRING, "The &inserted snippet:", getFieldEditorParent()));		
 //		addField(new SnippetListEditor("snippet name", "whatever 2nd", getFieldEditorParent()));
+		
+		SnippetListEditor listeditor = new SnippetListEditor("snippetlist", "snippetlist", getFieldEditorParent());
+		
+		
+		
+		
+		
+		Text text = new Text(getFieldEditorParent(), SWT.MULTI | SWT.READ_ONLY );
+		GridData gd = new GridData(SWT.FILL | SWT.V_SCROLL | SWT.H_SCROLL);
+		gd.horizontalAlignment = SWT.FILL;
+		gd.widthHint = 400;
+		gd.verticalAlignment = SWT.FILL;
+		gd.horizontalSpan = 2;
+
+		
+		text.setLayoutData(gd);
+		text.setText("current String content \n"
+				+ "even with multline \n"
+				+ "asdf and verrrrrrrrrrrrrrrrrrrrrrryyyyyyyyyyyyyyyyyyyyyyyy llllllllllllllooooooooooong linesdf and verrrrrrrrrrrrrrrrrrrrrrryyyyyyyyyyyyyyyyyyyyyyyy llllllllllllllooooooooooong linesdf and verrrrrrrrrrrrrrrrrrrrrrryyyyyyyyyyyyyyyyyyyyyyyy llllllllllllllooooooooooong linesdf and verrrrrrrrrrrrrrrrrrrrrrryyyyyyyyyyyyyyyyyyyyyyyy llllllllllllllooooooooooong linesdf and verrrrrrrrrrrrrrrrrrrrrrryyyyyyyyyyyyyyyyyyyyyyyy llllllllllllllooooooooooong line");
+//		text.setLayoutData(layoutData);
+		
+		
 	}
 
 	/* (non-Javadoc)
