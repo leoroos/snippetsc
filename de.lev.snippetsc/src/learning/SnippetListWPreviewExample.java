@@ -1,19 +1,21 @@
 package learning;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.eclipse.swt.*;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.layout.*;
-import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.TableItem;
+import org.eclipse.swt.widgets.Text;
 
 import de.lev.snippetsc.preferences.SnippetContainer;
 import de.lev.snippetsc.preferences.SnippetContainer.SnippetKey;
 import de.lev.snippetsc.preferences.SnippetList;
-import de.lev.snippetsc.preferences.SnippetTableListener;
+import de.lev.snippetsc.preferences.SnippetList.SnippetTableListener;
 
 public class SnippetListWPreviewExample {
 	

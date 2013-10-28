@@ -16,14 +16,36 @@ import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 
 import de.lev.snippetsc.Activator;
-import de.lev.snippetsc.preferences.PreferenceConstants;
+import de.lev.snippetsc.preferences.SnippetContainer.SnippetKey;
 
-public class InsertSnippetCommand extends AbstractHandler {
+public abstract class InsertSnippetCommand extends AbstractHandler {
 
+	public static class InsertSnippetCommand1 extends InsertSnippetCommand {
+		@Override
+		protected int getSnippetNumber() {
+			return 0;
+		}
+	}
+
+	public static class InsertSnippetCommand2 extends InsertSnippetCommand {
+		@Override
+		protected int getSnippetNumber() {
+			return 1;
+		}
+	}
+
+	public static class InsertSnippetCommand3 extends InsertSnippetCommand {
+		@Override
+		protected int getSnippetNumber() {
+			return 2;
+		}
+	}
+	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IEditorInput activeEditorInput = HandlerUtil.getActiveEditorInput(event);
 		IEditorPart activeEditor = HandlerUtil.getActiveEditor(event);
+		
 		if (activeEditor instanceof ITextEditor) {
 			ITextEditor texteditor = (ITextEditor) activeEditor;
 			ISelectionProvider selp = texteditor.getSelectionProvider();
@@ -35,7 +57,10 @@ public class InsertSnippetCommand extends AbstractHandler {
 				ITextSelection textsel = (ITextSelection) selection;
 				int offset = textsel.getOffset();				
 				try {
-					String insertString = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.P_STRING);
+					int snippetnr = getSnippetNumber();
+					String generatePreferenceKey = SnippetKey.snippet.generatePreferenceKey(snippetnr);					
+					String insertString = Activator.getDefault().getPreferenceStore().getString(generatePreferenceKey);
+					
 					document.replace(offset, 0, insertString);
 					selp.setSelection(new TextSelection(offset + insertString.length(), 0));
 				} catch (BadLocationException e) {
@@ -44,10 +69,13 @@ public class InsertSnippetCommand extends AbstractHandler {
 				}
 			}
 		}
-
-		//Nothing to do otherwise
+		/*
+		 * Nothing to do otherwise
+		 */
 		return null;
 	}
+
+	protected abstract int getSnippetNumber();
 	
 
 }

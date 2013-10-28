@@ -10,24 +10,54 @@
       </category>
       <command
             categoryId="snippetshortcut.commands.category"
-            id="snippetshortcut.handler.insertSnippetCommand"
+            id="snippetshortcut.handler.insertSnippetCommand1"
             name="Insert Snippet (1)">
+      </command>
+      <command
+            categoryId="snippetshortcut.commands.category"
+            id="snippetshortcut.handler.insertSnippetCommand2"
+            name="Insert Snippet (2)">
+      </command>
+      <command
+            categoryId="snippetshortcut.commands.category"
+            id="snippetshortcut.handler.insertSnippetCommand3"
+            name="Insert Snippet (3)">
       </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="de.lev.snippsc.InsertSnippetCommand"
-            commandId="snippetshortcut.handler.insertSnippetCommand">
+            class="de.lev.snippsc.InsertSnippetCommand$InsertSnippetCommand1"
+            commandId="snippetshortcut.handler.insertSnippetCommand1">
+      </handler>
+      <handler
+            class="de.lev.snippsc.InsertSnippetCommand$InsertSnippetCommand2"
+            commandId="snippetshortcut.handler.insertSnippetCommand2">
+      </handler>
+      <handler
+            class="de.lev.snippsc.InsertSnippetCommand$InsertSnippetCommand3"
+            commandId="snippetshortcut.handler.insertSnippetCommand3">
       </handler>
    </extension>
    <extension
          point="org.eclipse.ui.bindings">
       <key
-            commandId="snippetshortcut.handler.insertSnippetCommand"
+            commandId="snippetshortcut.handler.insertSnippetCommand1"
             contextId="org.eclipse.ui.textEditorScope"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M3+#">
+            sequence="M1+Ö">
+      </key>
+      <key
+            commandId="snippetshortcut.handler.insertSnippetCommand2"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+Ä">
+      </key>
+      <key
+            commandId="snippetshortcut.handler.insertSnippetCommand3"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+Ü">
       </key>
    </extension>
    <extension
@@ -39,8 +69,18 @@
                mnemonic="M"
                id="snippetshortcut.menus.sampleMenu">
             <command
-                  commandId="snippetshortcut.handler.insertSnippetCommand"
-                  label="Insert Snippet"
+                  commandId="snippetshortcut.handler.insertSnippetCommand1"
+                  label="Insert Snippet 1"
+                  mnemonic="S">
+            </command>
+            <command
+                  commandId="snippetshortcut.handler.insertSnippetCommand2"
+                  label="Insert Snippet 2"
+                  mnemonic="S">
+            </command>
+            <command
+                  commandId="snippetshortcut.handler.insertSnippetCommand3"
+                  label="Insert Snippet 3"
                   mnemonic="S">
             </command>
          </menu>

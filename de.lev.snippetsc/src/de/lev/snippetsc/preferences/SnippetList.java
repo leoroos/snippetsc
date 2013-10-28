@@ -58,6 +58,13 @@ public class SnippetList {
 		this.tableListener.remove(l);
 	}
 
+	public interface SnippetTableListener {
+
+		void tableItemSelected(SelectionEvent e, TableItem item,
+				SnippetContainer data);
+
+	}
+	
 	private void addTableListener(final Table table) {
 		table.addListener(SWT.SetData, new Listener() {
 
